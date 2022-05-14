@@ -22,6 +22,11 @@ Route::get('/db-migrate', function () {
     echo Artisan::output();
 });
 
+Route::get('/db-migrate-refresh', function () {
+    Artisan::call('migrate:refresh');
+    echo Artisan::output();
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
