@@ -32,8 +32,6 @@ Route::get('/authorization', function (Request $request) {  //Get authorization
     return redirect('https://auth4500.herokuapp.com/oauth/authorize?'.$query);
 })->name('authorization');
 
-use Illuminate\Http\Request;
-
 Route::get('/callback', function (Request $request) {   //Get Token after authorization
     $state = $request->session()->pull('state');
     
