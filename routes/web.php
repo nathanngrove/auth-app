@@ -22,7 +22,7 @@ Route::get('/authorization', function (Request $request) {  //Get authorization
     $request->session()->put('state', $state = Str::random(40));
  
     $query = http_build_query([
-        'client_id' => '8',
+        'client_id' => '6',
         'redirect_uri' => 'https://auth4500.herokuapp.com/callback',
         'response_type' => 'code',
         'scope' => '',
