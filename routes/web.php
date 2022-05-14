@@ -22,7 +22,7 @@ Route::get('/authorization', function (Request $request) {  //Get authorization
     $request->session()->put('state', $state = Str::random(40));
  
     $query = http_build_query([
-        'client_id' => '6',
+        'client_id' => '3',
         'redirect_uri' => 'https://auth4500.herokuapp.com/callback',
         'response_type' => 'code',
         'scope' => '',
@@ -41,9 +41,9 @@ Route::get('/callback', function (Request $request) {   //Get Token after author
  
         $response = Http::asForm()->post('https://auth4500.herokuapp.com/oauth/token', [
             'grant_type' => 'authorization_code',
-            'client_id' => '6',
-            'client_secret' => '5vcwcF4ZRtRF905YVYTLT1MdkpZZlpkDvgdmWDDA',
-            'redirect_uri' => 'https://auth4500.herokuapp.com/api-auth/callback',
+            'client_id' => '3',
+            'client_secret' => 'OTKhMsf6jtGZAS51A5RBJ22ZuVJBv8aY0yLhOFp8',
+            'redirect_uri' => 'https://auth4500.herokuapp.com/callback',
             'code' => $request->code,
         ]);
         
